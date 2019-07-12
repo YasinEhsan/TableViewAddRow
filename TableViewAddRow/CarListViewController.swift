@@ -10,7 +10,7 @@ import UIKit
 
 class CarListViewController: UIViewController {
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var carTableView: UITableView!
     
     var cars = [String]()
     var newCar: String = ""
@@ -20,8 +20,8 @@ class CarListViewController: UIViewController {
         
         cars = ["BMW","Audi","Volkswagen"]
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        carTableView.delegate = self
+        carTableView.dataSource = self
     }
     
 
@@ -51,11 +51,6 @@ extension CarListViewController: UITableViewDelegate, UITableViewDataSource{
     
     // 3
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "carCell", for: indexPath)
-        
-        cell.textLabel?.text = cars[indexPath.row]
-        
-        return cell
         
         let currCell = cars[indexPath.row]
         
@@ -64,7 +59,7 @@ extension CarListViewController: UITableViewDelegate, UITableViewDataSource{
             fatalError()
         }
         
-        cell.setCar()
+        cell.setCar(carName: currCell)
         return cell
     }
 }
