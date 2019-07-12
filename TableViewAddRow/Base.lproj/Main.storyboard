@@ -13,7 +13,7 @@
         <!--Cars-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TableViewAddRow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CarListViewController" customModule="TableViewAddRow" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KWK-pV-DXj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -30,7 +30,11 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Cars" id="ZXL-Cd-u3a">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="eS8-PX-Rrs"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="eS8-PX-Rrs">
+                            <connections>
+                                <segue destination="CKS-SL-BZh" kind="presentation" id="Foc-qN-eR5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
