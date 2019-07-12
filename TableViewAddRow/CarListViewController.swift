@@ -10,6 +10,8 @@ import UIKit
 
 class CarListViewController: UIViewController {
     
+    @IBOutlet var tableView: UITableView!
+    
     var cars = [String]()
     var newCar: String = ""
     
@@ -17,6 +19,9 @@ class CarListViewController: UIViewController {
         super.viewDidLoad()
         
         cars = ["BMW","Audi","Volkswagen"]
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
 
@@ -50,6 +55,16 @@ extension CarListViewController: UITableViewDelegate, UITableViewDataSource{
         
         cell.textLabel?.text = cars[indexPath.row]
         
+        return cell
+        
+        let currCell = cars[indexPath.row]
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "carCell", for: indexPath) as? CarTableViewCell else {
+            print("dequeue cell didn't work")
+            fatalError()
+        }
+        
+        cell.setCar()
         return cell
     }
 }
