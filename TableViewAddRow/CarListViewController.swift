@@ -24,6 +24,31 @@ class CarListViewController: UIViewController {
         carTableView.dataSource = self
     }
     
+    @IBAction func cancel(segue:UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func done(segue:UIStoryboardSegue) {
+        let carDetailVC = segue.source as! CarDetailViewController
+        newCar = carDetailVC.carTestField.text ?? "lmfr"
+        
+        cars.append(newCar)
+        carTableView.reloadData()
+    }
+    
+//    @IBAction func done(sender: UIStoryboardSegue) {
+//
+//         guard let carDeetVC = sender.source as? CarDetailViewController  else { return }
+//
+//        newCar = carDeetVC.name
+//        print(newCar + " new car")
+//        cars.append(newCar + " new car")
+//        carTableView.reloadData()
+//
+//    }
+    
+    
+    
 
     /*
     // MARK: - Navigation

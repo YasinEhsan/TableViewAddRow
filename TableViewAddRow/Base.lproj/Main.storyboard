@@ -26,14 +26,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="71.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVl-j1-pNL">
-                                            <rect key="frame" x="25" y="25" width="148" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVl-j1-pNL">
+                                            <rect key="frame" x="25" y="25.666666666666671" width="148" height="20.333333333333329"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="148" id="USW-Uj-pOB"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="xVl-j1-pNL" secondAttribute="bottom" constant="15" id="UCz-6M-isS"/>
+                                        <constraint firstItem="xVl-j1-pNL" firstAttribute="leading" secondItem="Ke8-no-qvo" secondAttribute="leadingMargin" constant="9" id="ioV-oM-4m0"/>
+                                        <constraint firstItem="xVl-j1-pNL" firstAttribute="centerY" secondItem="Ke8-no-qvo" secondAttribute="centerY" id="ldS-x1-Rfs"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="carLabel" destination="xVl-j1-pNL" id="s3Y-Jo-Ni8"/>
@@ -56,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="920.79999999999995" y="660.59113300492618"/>
         </scene>
-        <!--View Controller-->
+        <!--Car Detail View Controller-->
         <scene sceneID="ehY-eh-A2J">
             <objects>
-                <viewController id="CKS-SL-BZh" sceneMemberID="viewController">
+                <viewController id="CKS-SL-BZh" customClass="CarDetailViewController" customModule="TableViewAddRow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3s4-TL-bhM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,10 +76,28 @@
                                 <items>
                                     <navigationItem title="Title" id="J10-Sx-nrG">
                                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="WBr-um-Fp2"/>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="zCV-hF-oPG"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="zCV-hF-oPG">
+                                            <connections>
+                                                <segue destination="ggF-SP-CxK" kind="unwind" unwindAction="doneWithSegue:" id="Gnj-fm-chQ"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MRw-EH-KWm">
+                                <rect key="frame" x="78" y="130" width="263" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEx-dZ-IgX">
+                                <rect key="frame" x="16" y="135" width="27" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -82,10 +107,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JfO-xB-SSJ"/>
                     </view>
+                    <connections>
+                        <outlet property="carTestField" destination="MRw-EH-KWm" id="vEH-jV-K71"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xng-6a-pNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ggF-SP-CxK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1625" y="661"/>
+            <point key="canvasLocation" x="1624.8" y="660.59113300492618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tBu-86-UQt">
