@@ -27,6 +27,6 @@ carTableView.reloadData()
 ```
 
 ![Walkthrough](featurerow.gif)
- [Visit Project](https://github.com/YasinEhsan/TableViewAddRow) 
+<!--[Visit Project](https://github.com/YasinEhsan/TableViewAddRow) -->
 
 # Debug
