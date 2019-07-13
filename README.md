@@ -1,6 +1,3 @@
-# README Boilerplate
-<!-- Description here -->
-
 ## Add Table View Row 
 - **Feature** add a custom tablw view row from a differnt segue 
 
@@ -29,4 +26,4 @@ carTableView.reloadData()
 ![Walkthrough](featurerow.gif)
 <!--[Visit Project](https://github.com/YasinEhsan/TableViewAddRow) -->
 
-# Debug
+
